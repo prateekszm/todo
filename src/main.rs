@@ -18,12 +18,12 @@ fn main() {
         match input {
             "add" => {
                 println!("Enter todo name:");
-                let mut name = get_input_from_user();
+                let name = get_input_from_user();
                 app_state.add(name.trim().to_string());
             }
             "remove" => {
                 println!("Enter index to remove:");
-                let mut index = get_input_from_user();
+                let index = get_input_from_user();
                 if let Ok(index) = index.trim().parse::<usize>() {
                     app_state.remove(index);
                 } else {
@@ -32,7 +32,7 @@ fn main() {
             }
             "edit" => {
                 //take position input from user
-                let mut position = get_input_from_user();
+                let position = get_input_from_user();
                 if let Ok(index) = position.trim().parse::<usize>() {
                     let name = get_input_from_user();
                     app_state.edit(index, name);
@@ -40,7 +40,7 @@ fn main() {
             }
             "finish" => {
                 println!("Enter index to finish:");
-                let mut index = get_input_from_user();
+                let index = get_input_from_user();
                 if let Ok(index) = index.parse::<usize>() {
                     app_state.finish(index);
                 }
